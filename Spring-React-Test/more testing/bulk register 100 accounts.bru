@@ -1,0 +1,20 @@
+meta {
+  name: bulk register 100 accounts
+  type: http
+  seq: 5
+}
+
+get {
+  url: http://localhost:8080/admin/bulk-register
+  body: file
+  auth: inherit
+}
+
+body:file {
+  file: @file(test-users.json) @contentType(application/json; charset=utf-8)
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

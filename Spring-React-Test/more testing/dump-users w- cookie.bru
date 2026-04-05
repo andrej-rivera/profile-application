@@ -1,0 +1,16 @@
+meta {
+  name: dump-users w/ cookie
+  type: http
+  seq: 1
+}
+
+get {
+  url: http://localhost:8080/admin/dump-users
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

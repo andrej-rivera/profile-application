@@ -1,0 +1,25 @@
+meta {
+  name: Set Profile2
+  type: http
+  seq: 4
+}
+
+post {
+  url: http://localhost:8080/user/set-profile
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "firstName": "Madz",
+    "lastName": "[REDACTED]",
+    "bio": "im madz 🚀",
+    "profilePictureUrl": "https://media.istockphoto.com/id/92734913/vector/mushroom-cloud-of-nuclear-explosion.jpg?s=612x612&w=0&k=20&c=3naS35a2EW3sptg0iCavt5ditWQWZ7GoSO1_NLzbBns="
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

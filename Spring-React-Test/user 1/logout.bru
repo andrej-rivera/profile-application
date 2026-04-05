@@ -1,0 +1,16 @@
+meta {
+  name: logout
+  type: http
+  seq: 6
+}
+
+get {
+  url: http://localhost:8080/logout
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

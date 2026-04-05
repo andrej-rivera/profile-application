@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: spring-react-project
+  datasource:
+    url: jdbc:postgresql://localhost:5432/spring_react_project
+    username: andre
+    password: pass
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      # set to either update or create-drop. update will update and maintain the schema, while create drop will create the schema on startup and drop it on shutdown.
+      ddl-auto: update
+    show-sql: true
+
+
+logging:
+  level:
+    org:
+      springframework:
+        security: TRACE
