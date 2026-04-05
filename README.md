@@ -1,5 +1,5 @@
 # User Account Project
-![alt text](image-6.png)
+![alt text](images/image-6.png)
 
 ## Project Overview
 The following project is a simple full-stack application built with a Spring Boot + PostgresSQL backend and a ViteJS frontend. The purpose of this project was to experiment with combining the security features of Spring Security and the database management features of Spring Data JPA. Additionally, I wanted to create a simple frontend interface in where I could call my backend API and have it manipulate the database in real time. The result of all these technologies is a basic application where users can register/login accounts, edit account information, and search for the accounts of other users.
@@ -10,6 +10,7 @@ The following project is a simple full-stack application built with a Spring Boo
 - Spring Boot
 - Spring Security
 - Spring Data JPA
+- Spring PostgresSQL Driver
 - NodeJS 22
 - ViteJS
 - PostgresSQL 16.10
@@ -33,7 +34,7 @@ All terminal commands referenced start at the local directory of this repository
 5) Open a new terminal. Use `cd frontend; npm run dev` to compile and run the web project
 
 By the end, you should have three terminals running.
-![alt text](image-9.png)
+![alt text](images/image-9.png)
 
 
 ## Features
@@ -45,28 +46,28 @@ It should be noted that a majority of the backend API requires authorization via
 
 ### User Account Creation
 One primary feature of the application is the ability to create your own user account which is stored on the backend DB and secured with Spring Security. To create an account, navigate to the signup page at http://localhost:5173/signup and enter your username, password, and email. After successful creation, you can now login to your account
-![alt text](image-7.png)
+![alt text](images/image-7.png)
 
 ### User Account Login
 Once you have signed up, you can login via the signup page at http://localhost:5173/login by entering your username and password. Authentication, authorization, and encryption for these accounts is handled by Spring Security.
-![alt text](image-8.png)
+![alt text](images/image-8.png)
 
 ### User Profiles & Editing
 Upon login, you will be greeted with the dashboard which displays basic information about the user. By default, it will have basic values.
-![alt text](image-3.png)
+![alt text](images/image-3.png)
 
 Your profile can be edited using the Set Profile button on the bottom right. This allows edit your text, name, bio, and profile picture. At the moment, there is no way to upload an image so you must find a place to host it and paste in the image link URL.
 
-![alt text](image-4.png)
+![alt text](images/image-4.png)
 
 ### User Searching
 Logged-in users can also search for the profiles of other users using the search function. This can be accessed at http://localhost:5173/search or by clicking the Search button on the dashboard. You can search for a specific username using the search bar and search button.
 
-![alt text](image-1.png)
-![alt text](image-2.png)
+![alt text](images/image-1.png)
+![alt text](images/image-2.png)
 
 Clicking on a displayed username brings you to their profile.
-![alt text](image.png)
+![alt text](images/image.png)
 
 ### User Logout
 Once you are done with the application, simply navigate back to your dashboard and click the logout button! Doing so will immediately end your session and Spring Security will log you out.
