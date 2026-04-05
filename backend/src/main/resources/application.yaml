@@ -13,7 +13,7 @@ spring:
     show-sql: true
 
 frontend:
-  url: ${FRONTEND_URL:http://localhost:5173}
+  url: ${FRONTEND_URL:andre-profile-app.netlify.app}
 
 logging:
   level:
