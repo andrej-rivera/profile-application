@@ -3,6 +3,8 @@ import { useNavigate, useLocation } from 'react-router'
 
 import './App.css'
 
+const API_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:8080"
+
 function SetProfile() {
     const navigate = useNavigate(); // initialize navigate function
     const location = useLocation();
@@ -28,7 +30,7 @@ function SetProfile() {
             profilePictureUrl: pictureUrl
         }
         try {
-            const response = await fetch("http://localhost:8080/user/set-profile", {
+            const response = await fetch(`${API_URL}/user/set-profile`, {
                 method: "POST",
                 credentials: "include",
                 headers: {

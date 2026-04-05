@@ -2,6 +2,8 @@ import { useState } from 'react'
 import './App.css'
 import { useNavigate } from 'react-router'
 
+const API_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:8080"
+
 function Login() {
     const navigate = useNavigate(); // initialize navigate function
     const [username, setUsername] = useState('')
@@ -22,7 +24,7 @@ function Login() {
 
         // make fetch request
         try {
-            const response = await fetch("http://localhost:8080/register", {
+            const response = await fetch(`${API_URL}/register`, {
                 method: "POST",
                 credentials: "include",
                 headers: {

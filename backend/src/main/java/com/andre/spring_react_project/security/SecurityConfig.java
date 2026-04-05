@@ -2,6 +2,7 @@ package com.andre.spring_react_project.security;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
@@ -24,10 +25,14 @@ import com.andre.spring_react_project.repository.UserRepository;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
+
+    @Value("${frontend.url}")
+    private String frontendUrl;
+
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
-            .csrf((csrf) -> csrf.disable()) // Disable CSRF for simplicity (enable lator?)
+            .csrf((csrf) -> csrf.disable()) // Disable CSRF for simplicity (enable later?)
             .cors(cors -> cors.configurationSource(corsConfigrationSource())) // Enable CORS w/ custom configuration (customize later)
             .authorizeHttpRequests((authorize) -> authorize
                 .requestMatchers("/login").permitAll() // Allow unauthenticated access to the login endpoint
@@ -74,8 +79,8 @@ public class SecurityConfig {
     public CorsConfigurationSource corsConfigrationSource() {
         // Configure CORS settings to align w/ React frontend
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(List.of("http://localhost:5173")); // Allow requests from the React frontend
-        configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE")); // Allow HTTP merthods
+        configuration.setAllowedOrigins(List.of(frontendUrl)); // Allow requests from the configured React frontend URL
+        configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE")); // Allow HTTP methods
         configuration.setAllowCredentials(true); // Allow credentials (e.g., cookies)
         configuration.setAllowedHeaders(List.of("*")); // Allow all headers
         

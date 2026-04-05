@@ -12,6 +12,8 @@ spring:
       ddl-auto: update
     show-sql: true
 
+frontend:
+  url: ${FRONTEND_URL:http://localhost:5173}
 
 logging:
   level:

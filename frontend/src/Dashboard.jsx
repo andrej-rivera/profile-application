@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router'
 
 import './App.css'
 
+const API_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:8080"
+
 function Dashboard() {
     const [id, setId] = useState('')
     const [firstName, setFirstName] = useState('')
@@ -16,7 +18,7 @@ function Dashboard() {
     const fetchProfile = async () => {
         // fetch user profile data from backend
         try {
-            const response = await fetch("http://localhost:8080/user/profile", {
+            const response = await fetch(`${API_URL}/user/profile`, {
                 method: "GET",
                 credentials: "include"
             });
@@ -44,7 +46,7 @@ function Dashboard() {
     // method for logging out
     const logout = async () => {
         try {
-            const response = await fetch("http://localhost:8080/logout", {
+            const response = await fetch(`${API_URL}/logout`, {
                 method: "POST",
                 credentials: "include"
             });

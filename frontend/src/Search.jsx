@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react'
 import './App.css'
 import { useNavigate, NavLink } from 'react-router'
 
+const API_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:8080"
+
 function Search() {
     const navigate = useNavigate(); // initialize navigate function
     const [searchUsername, setSearchUsername] = useState('');
@@ -14,7 +16,7 @@ function Search() {
 
         // make GET request for usernames
         try {
-            const response = await fetch("http://localhost:8080/user/search" 
+            const response = await fetch(`${API_URL}/user/search` 
                  + "?username=" + searchUsername
                  + "&i=" + searchCount
                  + "&p=" + searchPage, {
