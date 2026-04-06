@@ -80,7 +80,7 @@ public class SecurityConfig {
         // Configure CORS settings to align w/ React frontend
         CorsConfiguration configuration = new CorsConfiguration();
         configuration.setAllowedOrigins(List.of(frontendUrl)); // Allow requests from the configured React frontend URL
-        configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE")); // Allow HTTP methods
+        configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS")); // Allow HTTP methods
         configuration.setAllowCredentials(true); // Allow credentials (e.g., cookies)
         configuration.setAllowedHeaders(List.of("*")); // Allow all headers
         

@@ -1,0 +1,25 @@
+meta {
+  name: register
+  type: http
+  seq: 1
+}
+
+post {
+  url: https://api.andrej-rivera.com/register
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "username": "andre",
+    "password": "pass",
+    "email": "andre@rocks.com",
+    "roles": "USER,ADMIN"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

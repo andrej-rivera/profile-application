@@ -1,0 +1,28 @@
+meta {
+  name: proxy
+  type: http
+  seq: 4
+}
+
+post {
+  url: https://api.andrej-rivera.com/register
+  body: json
+  auth: inherit
+}
+
+headers {
+  Origin: https://andre-profile-app.netlify.app
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "username": "test",
+    "password": "test"
+  }
+}
+
+settings {
+  encodeUrl: false
+  timeout: 0
+}

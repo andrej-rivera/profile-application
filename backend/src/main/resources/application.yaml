@@ -12,8 +12,15 @@ spring:
       ddl-auto: update
     show-sql: true
 
+server:
+  port: 443
+  ssl:
+    key-store: /etc/letsencrypt/live/api.andrej-rivera.com/keystore.p12
+    key-store-password: changeit
+    key-store-type: PKCS12
+
 frontend:
-  url: ${FRONTEND_URL:andre-profile-app.netlify.app}
+  url: ${FRONTEND_URL:https://andre-profile-app.netlify.app}
 
 logging:
   level:

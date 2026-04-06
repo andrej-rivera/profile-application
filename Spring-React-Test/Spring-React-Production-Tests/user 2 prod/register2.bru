@@ -1,0 +1,25 @@
+meta {
+  name: register2
+  type: http
+  seq: 1
+}
+
+post {
+  url: https://api.andrej-rivera.com/register
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "username": "madz",
+    "password": "pass",
+    "email": "madz@rocks.com",
+    "roles": "USER,ADMIN"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

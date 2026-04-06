@@ -5,9 +5,14 @@ meta {
 }
 
 get {
-  url: http://localhost:8080/user/profile
+  url: https://api.andrej-rivera.com/user/profile
   body: none
   auth: inherit
+}
+
+params:query {
+  ~username: andre
+  ~username: ""
 }
 
 body:json {
